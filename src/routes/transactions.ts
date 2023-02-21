@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
 
-import { checkSessionIdExists } from "./check-session-id-exists";
+import { checkSessionIdExists } from "../middlewares/check-session-id-exists";
 
 import { knex } from "../database";
 
