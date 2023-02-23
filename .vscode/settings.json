@@ -1,4 +1,4 @@
 {
-  "cSpell.words": ["fastify", "Parens", "rocketseat", "sqlite"],
+  "cSpell.words": ["fastify", "Parens", "rocketseat", "sqlite", "tsup"],
   "dotenv.enableAutocloaking": false
 }
