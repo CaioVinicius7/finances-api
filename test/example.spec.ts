@@ -1,7 +1,22 @@
-import { expect, test } from "vitest";
+import { beforeAll, afterAll, test, expect } from "vitest";
+import request from "supertest";
 
-test("1 + 1 = 2", () => {
-  const result = 2;
+import { app } from "../src/app";
 
-  expect(result).toBe(2);
+beforeAll(async () => {
+  await app.ready();
+});
+
+afterAll(async () => {
+  await app.close();
+});
+
+test("User can create a new transaction", async () => {
+  const { statusCode } = await request(app.server).post("/transactions").send({
+    title: "New transaction",
+    amount: 5000,
+    type: "credit"
+  });
+
+  expect(statusCode).toEqual(201);
 });
